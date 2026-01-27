@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+
+<head>
+
+     <meta charset="UTF-8">
+
+     <title>  JinLauTsai' Site  </title>
+
+<head>
+
+<body>
+
+
+        <div class="card">
+           <font size = "7">
+
+           <h1>侬好！</h1>
+
+           <p>关关雎鸠，在河之洲；<br>     
+              窈窕淑女，君子好逑。<p>
+
+           <p> 北京时间 :<span id="北京时间"></span></p>
+
+           <button onclick="alert('祝你好运 !')">点击一下 !</button>
+
+        </div>
+
+
+
+        <script>
+
+        // 实时显示时间
+
+        function updateTime() 
+		   {
+
+            const now = new Date();
+
+            document.getElementById('北京时间').textContent = 
+
+                now.toLocaleTimeString('zh-CN');
+
+           }
+
+            updateTime();
+
+            setInterval(updateTime, 1000);
+
+        
+
+        // 页面加载时的小惊喜
+
+        window.onload = () =>
+		{
+             
+            alert('有朋自远方来，不亦乐乎！');    
+
+
+        };
+
+    </script>
+
+</body>
+
+<style>
+
+        body {
+
+            font-family: 'Simsun', sans-serif;
+
+            text-align: center;
+
+            background: linear-gradient( 135deg ,#667eea 0%, #764ba2 100%);
+
+            margin: 0;
+			height:100vh;
+
+            padding: 180px;
+
+            color: white;
+
+        }
+
+        .card {
+		////    position: absolute ;
+		//	top: 25%;
+			
+		//	left: 32%;
+		    widt：1%;
+			height:0.5%
+			
+		//	transform: translate(-50,-50%);
+			
+
+            background: rgba(255,255,255,0.1);
+
+            border-radius: 10px;
+
+            padding: 20px;
+
+            max-width: 1024px;
+
+         //  margin: 0 auto;
+
+         //   backdrop-filter: blur(10px);
+
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+
+            animation: float 3s infinite ease-in-out;
+			
+			text-align: center;
+
+        }
+
+        @keyframes float {
+
+            0%, 100% { transform: translateY(0); }
+
+            50% { transform: translateY(-10px); }
+
+        }
+
+        button {
+
+            background: #ff6b6b;
+
+            color: white;
+
+            border: none;
+
+            padding: 12px 24px;
+
+            border-radius: 25px;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            margin-top: 60px;
+
+            transition: all 0.3s;
+
+        }
+
+        button:hover {
+
+            background: #ee5253;
+
+            transform: scale(1.05);
+
+        }
+
+</style>
