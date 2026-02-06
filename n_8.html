@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 丙午马年 | 万马奔腾迎新岁</title>
+    <style>
+
+      
+        :root {
+            --china-red: #c61b1e;
+            --gold-shine: linear-gradient(135deg, #fceabb 0%, #fccd4d 50%, #f8b500 100%);
+            --deep-maroon: #8b0000;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            text-align: center;
+    
+            background-color: var(--china-red);
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+            color: #fff;
+            overflow: hidden; /* 防止滚动条破坏美感 */
+        }
+        
+
+        @keyframes float {
+
+            0%, 100% { transform: translateY(0); }
+
+            50% { transform: translateY(-10px); }
+
+        }
+
+        button {
+
+            background: #ff6b6b;
+
+            color: white;
+
+            border: none;
+
+            padding: 12px 24px;
+
+            border-radius: 25px;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            margin-top: 60px;
+
+            transition: all 0.3s;
+
+        }
+
+        button:hover {
+
+            background: #ee5253;
+
+            transform: scale(1.05);
+
+        }
+
+
+        /* 极富喜庆感的背景 */
+        .main-wrapper {
+            width: 100%;
+            height: 100vh;
+            background: radial-gradient(circle at center, var(--china-red) 0%, var(--deep-maroon) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 背景装饰：祥云图案（简易CSS实现） */
+        .cloud {
+            position: absolute;
+            opacity: 0.15;
+            filter: brightness(0) invert(1);
+            pointer-events: none;
+            animation: cloudMove 30s linear infinite;
+        }
+
+        @keyframes cloudMove {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(100vw); }
+        }
+
+        /* 核心内容区 */
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            padding: 20px;
+        }
+
+        .year-title {
+            font-size: 1.5rem;
+            letter-spacing: 8px;
+            color: #fccd4d;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+
+        .main-heading {
+            font-size: clamp(4rem, 15vw, 8rem);
+            font-weight: 900;
+            background: var(--gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        /* 祝福语卡片 */
+        .message-box {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(252, 234, 187, 0.4);
+            padding: 3rem;
+            border-radius: 4px; /* 方正大气 */
+            position: relative;
+            max-width: 600px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* 装饰边角 */
+        .message-box::before, .message-box::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 3px solid #fccd4d;
+        }
+        .message-box::before { top: -5px; left: -5px; border-right: 0; border-bottom: 0; }
+        .message-box::after { bottom: -5px; right: -5px; border-left: 0; border-top: 0; }
+
+        .slogan {
+            font-size: 1.8rem;
+            color: #fceabb;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 45px;
+            background: var(--gold-shine);
+            color: #8b0000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(252, 205, 77, 0.4);
+        }
+
+        /* 底部版权 */
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            font-size: 0.8rem;
+            color: rgba(252, 234, 187, 0.6);
+            letter-spacing: 2px;
+        }
+     
+    </style>
+</head>
+<body>
+           
+
+  
+   
+  
+    
+
+
+     
+ <div id="stats-container">
+   
+</div>
+    
+<div class="main-wrapper">
+    <div class="vertical-text" style= font-size:40px >万事如意步步高</div>
+    
+    <div class="vertical-text" style= font-size:40px>一帆风顺年年好</div>
+    <div class="cloud" style="top: 15%; font-size: 5rem;">☁️</div>
+    <div class="cloud" style="top: 60%; animation-duration: 45s; font-size: 8rem;">☁️</div>
+
+    
+
+    <div class="footer">
+        <p> 北京时间 :<span id="北京时间"></span></p>
+        <script>
+
+        // 实时显示时间
+
+        function updateTime() 
+		   {
+
+            const now = new Date();
+
+            document.getElementById('北京时间').textContent = 
+
+                now.toLocaleTimeString('zh-CN');
+
+           }
+
+            updateTime();
+
+            setInterval(updateTime, 1000);
+
+        
+
+        // 页面加载时的小惊喜
+
+        window.onload = () =>
+		{
+             
+            alert('有朋自远方来，不亦乐乎！');    
+
+
+        };
+
+    </script>
+    <div id="stats-container">
+	 <p>                             </p>
+     今日访问人数：<span id="visitor-count">载入中...</span>
+        
+    </div>
+
+    <script>
+            // 當頁面加載完成後執行
+        window.onload = async () => {
+            try {
+                // 1. 調用後端接口紀錄並獲取人數
+                // 這裡假設你的 Node.js 路由是 /api/visit
+                const response = await fetch('/api/visit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    // 2. 更新 DOM 顯示人數
+                    document.getElementById('visitor-count').innerText = data.count;
+                }
+            } catch (error) {
+                console.error('無法獲取訪問統計:', error);
+                document.getElementById('visitor-count').innerText = '暫無數據';
+            }
+        };
+    </script>
+
+        © 2026 丙午马年 · 个人品牌官网 · 新年快乐
+    </div>
+</div>
+
+</body>
+
+</html>
